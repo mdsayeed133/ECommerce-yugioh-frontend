@@ -19,9 +19,6 @@
     "web-vitals": "^2.1.4"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },

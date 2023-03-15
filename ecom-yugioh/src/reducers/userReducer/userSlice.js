@@ -3,7 +3,6 @@ import axios from "axios";
 
 const baseURL = "http://localhost:5000/YuGiShop";
 
-
 export const login = createAsyncThunk("user/login", async (loginRequest) => {
   try {
     const response = await axios.post(`${baseURL}/user/login`, loginRequest);
@@ -13,7 +12,7 @@ export const login = createAsyncThunk("user/login", async (loginRequest) => {
   }
 });
 
-export const logout = createAsyncThunk("user/logout", async () => {
+export const logout = createAsyncThunk("user/logout", () => {
   return null;
 });
 
@@ -56,7 +55,7 @@ const userSlice = createSlice({
       .addCase(logout.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(logout.fulfilled, (state,action) => {
+      .addCase(logout.fulfilled, (state, action) => {
         state.status = "idle";
         state.login = action.payload;
       })

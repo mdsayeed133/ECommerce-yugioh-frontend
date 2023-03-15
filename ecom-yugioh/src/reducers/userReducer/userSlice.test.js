@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer, { login, logout, register } from "./userSlice";
+import userSlice, { login, logout, register } from "./userSlice";
 import axios from "axios";
 
 jest.mock("axios");
@@ -8,7 +8,7 @@ describe("userSlice", () => {
   let store;
 
   beforeEach(() => {
-    store = configureStore({ reducer: { user: userReducer } });
+    store = configureStore({ reducer: { user: userSlice } });
   });
 
   afterEach(() => {
