@@ -13,10 +13,14 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                sh 'npm ci'
+          steps {
+            dir('yugioh') {
+              sh 'npm ci'
+              sh 'npm run build'
             }
+          }
         }
+
 
         stage('Test') {
             steps {
