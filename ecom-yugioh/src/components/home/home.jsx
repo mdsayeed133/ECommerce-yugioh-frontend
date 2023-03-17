@@ -3,9 +3,9 @@ import logo from "../../images/logo.png";
 import buffgreed from "../../images/buffgreed.jpg";
 import giftgreed from "../../images/giftgreed.jpg";
 import greedjar from "../../images/greedjar.jpg";
-import darkmagican from "../../images/darkmagican.jpg"
-import greed from "../../images/greed.jpg"
-import greedblush from "../../images/greedblush.jpg"
+import darkmagican from "../../images/darkmagican.jpg";
+import greed from "../../images/greed.jpg";
+import greedblush from "../../images/greedblush.jpg";
 import "./home.css";
 
 const Home = () => {
@@ -18,8 +18,8 @@ const Home = () => {
       <div className="home-about">
         <p>
           Discover, buy and trade your favorite Yu-Gi-Oh! cards, from the
-          classic Pot of Greed to the powerful Dark Magician. Join the
-          community of duelists and start building your ultimate deck!
+          classic Pot of Greed to the powerful Dark Magician. Join the community
+          of duelists and start building your ultimate deck!
         </p>
       </div>
       <div className="home-images">

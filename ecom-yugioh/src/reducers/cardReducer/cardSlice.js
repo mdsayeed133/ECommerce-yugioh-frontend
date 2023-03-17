@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseURL = "http://localhost:5000/YuGiShop";
+const baseURL =
+  "http://yugishop-env.eba-czhwecqy.us-west-1.elasticbeanstalk.com/YuGiShop";
 
 export const getAllCards = createAsyncThunk("card/all", async () => {
   try {
