@@ -1,0 +1,47 @@
+.home-page {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.home-about {
+  text-align: center;
+  margin: 30px;
+  max-width: 800px;
+}
+
+.home-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.greed,
+.greed-blush,
+.dark-magican,
+.buff-greed,
+.gift-greed,
+.greed-jar {
+  max-width: 250px;
+  margin: 10px;
+}
+
+.home-footer {
+  text-align: center;
+}
