@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'Node 14'
+        nodejs 'Node_14'
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build') {
           steps {
-            dir('yugioh') {
+            dir('ecom-yugioh') {
               sh 'npm ci'
               sh 'npm run build'
             }
@@ -24,7 +24,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                withEnv(["PATH+NODE=${tool 'Node_14'}/bin"]) {
+                    dir('ecom-yugioh') {
+                        sh 'npm test'
+                    }
+                }
             }
         }
 
