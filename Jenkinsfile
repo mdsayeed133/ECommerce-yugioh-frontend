@@ -35,7 +35,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    dockerImage = docker.build('ecommerce-yugioh-frontend', '.')
+                    dockerImage = docker.build('ecommerce-yugioh-frontend', 'ecom-yugioh/')
                 }
             }
         }
