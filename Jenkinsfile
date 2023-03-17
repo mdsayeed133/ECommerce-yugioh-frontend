@@ -40,18 +40,17 @@ pipeline {
         }
 
         stage('Docker Push') {
-    steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerLogin', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-            script {
-                docker.withRegistry('https://index.docker.io/v1/', 'dockerLogin') {
-                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
-                    dockerImage.push("latest")
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerLogin', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    script {
+                        docker.withRegistry('https://index.docker.io/v1/', 'dockerLogin') {
+                            sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                            dockerImage.push("latest")
+                        }
+                    }
                 }
             }
         }
-    }
-}
-
     }
 }
 
