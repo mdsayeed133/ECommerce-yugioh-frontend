@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build') {
           steps {
-            dir('yugioh') {
+            dir('ecom-yugioh') {
               sh 'npm ci'
               sh 'npm run build'
             }
