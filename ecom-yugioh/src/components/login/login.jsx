@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../reducers/userReducer/userSlice.js";
@@ -20,11 +20,14 @@ const Login = () => {
       dispatch(login(loginRequest));
     } catch (error) {
       console.error("Error logging in:", error);
-    } finally{
-        if(userStatus === "succeeded") navigate('/');
     }
-    
   };
+
+  useEffect(() => {
+    if (userStatus === "succeeded") {
+      navigate("/");
+    }
+  }, [userStatus, navigate]);
 
   return (
     <div className="login-page">
