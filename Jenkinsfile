@@ -24,7 +24,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                withEnv(["PATH+NODE=${tool 'Node_14'}/bin"]) {
+                    dir('ecom-yugioh') {
+                        sh 'npm test'
+                    }
+                }
             }
         }
 
