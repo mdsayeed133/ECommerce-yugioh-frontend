@@ -13,14 +13,13 @@ pipeline {
         }
 
         stage('Build') {
-          steps {
-            dir('ecom-yugioh') {
-              sh 'npm ci'
-              sh 'npm run build'
+            steps {
+                dir('ecom-yugioh') {
+                    sh 'npm ci'
+                    sh 'npm run build'
+                }
             }
-          }
         }
-
 
         stage('Test') {
             steps {
@@ -42,9 +41,10 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                withCredentials([string(credentialsId: 'dockerLogin', variable: 'DOCKER_HUB_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerLogin', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     script {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockerLogin') {
+                            docker.login("-u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}")
                             dockerImage.push("latest")
                         }
                     }
@@ -53,3 +53,4 @@ pipeline {
         }
     }
 }
+
