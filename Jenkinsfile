@@ -60,7 +60,7 @@ pipeline {
                     // CONTAINER_NAME: A name for your running container (e.g., ecommerce-yugioh-frontend)
 
                     sh "docker rm -f ecom-yugi || true" // Remove the existing container if it exists
-                    sh "docker run -d --name ecom-yugi -p 80:3000 mdsayeed133/ecommerce-yugioh-frontend:latest"
+                    sh "docker run -d --name ecom-yugi -p 3000:3000 mdsayeed133/ecommerce-yugioh-frontend:latest"
                 }
             }
         }
