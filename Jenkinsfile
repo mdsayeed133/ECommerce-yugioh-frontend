@@ -51,6 +51,19 @@ pipeline {
                 }
             }
         }
+        stage('Docker Run') {
+            steps {
+                script {
+                    // Replace the following values:
+                    // YOUR_APP_PORT: The port your application is using (e.g., 3000)
+                    // HOST_PORT: The port you want to use on the host (e.g., 80)
+                    // CONTAINER_NAME: A name for your running container (e.g., ecommerce-yugioh-frontend)
+
+                    sh "docker rm -f ecom-yugi || true" // Remove the existing container if it exists
+                    sh "docker run -d --name ecom-yugi -p 80:3000 mdsayeed133/ecommerce-yugioh-frontend:latest"
+                }
+            }
+        }
     }
 }
 
