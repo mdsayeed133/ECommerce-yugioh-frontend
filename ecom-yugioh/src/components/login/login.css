@@ -1,59 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../../images/darkmagback.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+}
+
 .login-page {
+  position: absolute;
+  top: 50%;
+  right: 70%;
+  transform: translate(50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.8);
   color: #333;
-  min-height: 100vh;
+  width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
-h1 {
+.login-title {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form-group {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-label {
+.login-label {
   margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-input {
+.login-input {
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-button {
+.login-btn {
   padding: 10px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #9711bc;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-button:hover {
-  background-color: #b30033;
+.login-btn:hover {
+  background-color: #f7f13b;
+  color: #3a0275;
 }
 
-.error {
+.login-error {
   padding: 10px;
   background-color: #f8d7da;
   color: #721c24;

@@ -3,9 +3,9 @@ import logo from "../../images/logo.png";
 import buffgreed from "../../images/buffgreed.jpg";
 import giftgreed from "../../images/giftgreed.jpg";
 import greedjar from "../../images/greedjar.jpg";
-import darkmagican from "../../images/darkmagican.jpg";
 import greed from "../../images/greed.jpg";
 import greedblush from "../../images/greedblush.jpg";
+import desire from "../../images/desire.jpg"
 import "./home.css";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
       <div className="home-about">
         <p>
           Discover, buy and trade your favorite Yu-Gi-Oh! cards, from the
-          classic Pot of Greed to the powerful Dark Magician. Join the community
+          classic Pot of Greed to the powerful Pot of Greed. Join the community
           of duelists and start building your ultimate deck!
         </p>
       </div>
@@ -28,7 +28,7 @@ const Home = () => {
         <img src={greedjar} alt="Greed Jar" className="greed-jar" />
       </div>
       <div className="home-images">
-        <img src={darkmagican} alt="Dark Magican" className="dark-magican" />
+        <img src={desire} alt="Desire" className="desire" />
         <img src={greed} alt="Greed" className="greed" />
         <img src={greedblush} alt="Greed Blush" className="greed-blush" />
       </div>
