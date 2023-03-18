@@ -34,7 +34,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    dockerImage = docker.build('ecommerce-yugioh-frontend', 'ecom-yugioh/')
+                    dockerImage = docker.build('mdsayeed133/ecommerce-yugioh-frontend', 'ecom-yugioh/')
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerLogin', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     script {
                         docker.withRegistry('https://index.docker.io/v1/', 'dockerLogin') {
-                            sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                            sh "echo '${DOCKER_PASSWORD}' | docker login -u ${DOCKER_USERNAME} --password-stdin"
                             dockerImage.push("latest")
                         }
                     }
