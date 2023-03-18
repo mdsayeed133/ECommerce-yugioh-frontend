@@ -53,7 +53,7 @@ const Login = () => {
             required
           />
         </div>
-        {userStatus === "failed" && <div className="error">Username or password is invalid</div>}
+        {userStatus === "failed" && <div className="error">Username or Password is invalid</div>}
         <button type="submit">Login</button>
       </form>
     </div>
