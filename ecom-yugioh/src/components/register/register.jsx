@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 import { register } from "../../reducers/userReducer/userSlice.js";
 import RegisterRequest from "../../classes/RegisterRequest.js";
 import "./register.css";
@@ -41,7 +41,7 @@ const RegisterPage = () => {
 
   return (
     <div className="register-page">
-      <h1 className="register-title">Enter the Realm of Shadows</h1>
+      <h1 className="register-title">Create a Contract</h1>
       <form className="register-form" onSubmit={handleSubmit}>
         <div className="register-form-group">
           <label className="register-label" htmlFor="username">
@@ -99,7 +99,27 @@ const RegisterPage = () => {
           <label className="register-label" htmlFor="countryId">
             Country:
           </label>
-          
+          <select
+            className="register-select"
+            value={countryId}
+            onChange={(e) => setCountryId(e.target.value)}
+          >
+            <option value={0}>Pick a Country</option>
+            <option value={1}>United Arab Emirates</option>
+            <option value={2}>Australia</option>
+            <option value={3}>Bangladesh</option>
+            <option value={4}>Brazil</option>
+            <option value={5}>Canada</option>
+            <option value={6}>Egypt</option>
+            <option value={7}>Spain</option>
+            <option value={8}>United Kingdom</option>
+            <option value={9}>Israel</option>
+            <option value={10}>Italy</option>
+            <option value={11}>Japan</option>
+            <option value={12}>Mexico</option>
+            <option value={13}>New Zealand</option>
+            <option value={14}>United States</option>
+          </select>
         </div>
         {userStatus === "failed" && (
           <div className="register-error">Invalid Register Request</div>
@@ -108,6 +128,9 @@ const RegisterPage = () => {
           Register
         </button>
       </form>
+      <div className="register-link">
+        Have Credentials? Login <Link to="/login">Here</Link>
+      </div>
     </div>
   );
 };

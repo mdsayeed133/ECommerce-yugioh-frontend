@@ -1,3 +1,4 @@
+
 .home-page {
   background-color: #121212;
   color: #ffffff;
@@ -40,6 +41,28 @@
 .greed-jar {
   max-width: 250px;
   margin: 10px;
+}
+
+.home-login {
+  text-align: center;
+  margin: 30px;
+  max-width: 800px;
+}
+
+.homepage-login-button {
+  padding: 10px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 25px;
+  background-color: #9711bc;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.homepage-login-button:hover {
+  background-color: #f7f13b;
+  color: #3a0275;
 }
 
 .home-footer {

@@ -29,6 +29,10 @@ describe("Home", () => {
     expect(wrapper.find(".home-images").exists()).toBe(true);
   });
 
+  it("contains the home login", () => {
+    expect(wrapper.find(".home-login").exists()).toBe(true);
+  });
+
   it("contains the home footer", () => {
     expect(wrapper.find(".home-footer").exists()).toBe(true);
   });

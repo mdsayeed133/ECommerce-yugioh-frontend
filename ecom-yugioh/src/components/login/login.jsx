@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { login } from "../../reducers/userReducer/userSlice.js";
 import LoginRequest from "../../classes/LoginRequest.js";
 import "./login.css";
@@ -66,6 +66,9 @@ const LoginPage = () => {
           Login
         </button>
       </form>
+      <div className="login-link">
+        No Credentials? Register <Link to='/register' >Here</Link>
+      </div>
     </div>
   );
 };

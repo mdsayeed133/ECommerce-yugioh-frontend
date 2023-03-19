@@ -1,40 +1,46 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url("../../images/darkmagback.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: "Arial", sans-serif;
-  height: 100vh;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+
 .login-page {
-  position: absolute;
-  top: 50%;
-  right: 70%;
-  transform: translate(50%, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
-  width: 400px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  min-height: 100vh;
+  background-image: url("../../images/darkmagback.webp");
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .login-title {
-  margin-bottom: 20px;
+  
+  color: #f8d347;
   font-size: 32px;
-  color: #333;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 1.2s linear;
 }
 
 .login-form {
+  
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  animation: fadeIn 1.3s linear;
 }
 
 .login-form-group {
@@ -45,12 +51,11 @@ body {
 
 .login-label {
   margin-bottom: 5px;
-  font-size: 18px;
-  color: #333;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #f8d347;
 }
 
 .login-input {
+  
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -58,26 +63,41 @@ body {
 }
 
 .login-btn {
+  
   padding: 10px;
   font-size: 16px;
-  background-color: #9711bc;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .login-btn:hover {
-  background-color: #f7f13b;
-  color: #3a0275;
+  background-color: #0056b3;
 }
 
 .login-error {
+  
   padding: 10px;
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
   border-radius: 4px;
   margin-bottom: 20px;
+}
+
+.login-link {
+  color: #f8d347;
+  text-align: center;
+  animation: fadeIn 1.4s linear;
+}
+
+.login-link a {
+  color: #f8d347;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }

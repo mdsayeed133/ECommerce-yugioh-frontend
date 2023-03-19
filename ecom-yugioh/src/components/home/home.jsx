@@ -1,14 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
 import buffgreed from "../../images/buffgreed.jpg";
 import giftgreed from "../../images/giftgreed.jpg";
 import greedjar from "../../images/greedjar.jpg";
 import greed from "../../images/greed.jpg";
 import greedblush from "../../images/greedblush.jpg";
-import desire from "../../images/desire.jpg"
+import desire from "../../images/desire.jpg";
 import "./home.css";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="home-page">
       <div className="home-header">
@@ -31,6 +33,15 @@ const Home = () => {
         <img src={desire} alt="Desire" className="desire" />
         <img src={greed} alt="Greed" className="greed" />
         <img src={greedblush} alt="Greed Blush" className="greed-blush" />
+      </div>
+      <div className="home-login">
+        <h3>Ready to Play the Game of Shadows</h3>
+        <button
+          className="homepage-login-button"
+          onClick={() => navigate("/login")}
+        >
+          Sign in now!
+        </button>
       </div>
       <div className="home-footer">
         <p>
