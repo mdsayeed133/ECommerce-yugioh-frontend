@@ -1,49 +1,54 @@
 import React from "react";
-import { shallow } from "enzyme";
-import Home from "./home.jsx";
+import { mount } from "enzyme";
+import { MemoryRouter } from "react-router-dom";
+import Home from "./Home";
 
-describe("Home", () => {
+describe("Home component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Home />);
+    wrapper = mount(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>
+    );
   });
 
-  it("renders the component without crashing", () => {
-    expect(wrapper.exists()).toBe(true);
+  it("renders without crashing", () => {
+    expect(wrapper).toBeTruthy();
   });
 
-  it("contains the logo", () => {
-    expect(wrapper.find(".logo").exists()).toBe(true);
+  it("contains the welcome header", () => {
+    const welcomeHeader = wrapper.find("h1");
+    expect(welcomeHeader.text()).toBe("Welcome to the Yu-Gi-Oh! Card Store!");
   });
 
-  it("contains the home header", () => {
-    expect(wrapper.find(".home-header").exists()).toBe(true);
+  it("contains the home-about paragraph", () => {
+    const aboutParagraph = wrapper.find(".home-about p");
+    expect(aboutParagraph.text()).toContain(
+      "Discover, buy and trade your favorite Yu-Gi-Oh! cards"
+    );
   });
 
-  it("contains the home about section", () => {
-    expect(wrapper.find(".home-about").exists()).toBe(true);
+  it("renders the images correctly", () => {
+    const images = wrapper.find(".home-images img");
+    expect(images).toHaveLength(6);
   });
 
-  it("contains the home images", () => {
-    expect(wrapper.find(".home-images").exists()).toBe(true);
+  it("contains the login call to action", () => {
+    const loginCTA = wrapper.find(".home-login h3");
+    expect(loginCTA.text()).toBe("Ready to Play the Game of Shadows");
   });
 
-  it("contains the home login", () => {
-    expect(wrapper.find(".home-login").exists()).toBe(true);
+  it("contains the sign-in button", () => {
+    const signInButton = wrapper.find(".homepage-login-button");
+    expect(signInButton.text()).toBe("Sign in now!");
   });
 
-  it("contains the home footer", () => {
-    expect(wrapper.find(".home-footer").exists()).toBe(true);
-  });
-
-  it("renders all image elements", () => {
-    expect(wrapper.find("img")).toHaveLength(7);
-  });
-
-  it("renders the correct text in the home header", () => {
-    expect(wrapper.find("h1").text()).toEqual(
-      "Welcome to the Yu-Gi-Oh! Card Store!"
+  it("contains the footer with the correct copyright", () => {
+    const footer = wrapper.find(".home-footer p");
+    expect(footer.text()).toContain(
+      `© ${new Date().getFullYear()} Yu-Gi-Oh! Card Store. All rights reserved.`
     );
   });
 });
