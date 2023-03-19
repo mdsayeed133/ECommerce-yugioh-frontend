@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { MemoryRouter } from "react-router-dom";
-import Home from "./Home";
+import Home from "./home";
 
 describe("Home component", () => {
   let wrapper;
