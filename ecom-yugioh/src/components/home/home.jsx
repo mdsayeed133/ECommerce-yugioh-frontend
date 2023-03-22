@@ -35,7 +35,7 @@ const Home = () => {
         <img src={greedblush} alt="Greed Blush" className="greed-blush" />
       </div>
       <div className="home-login">
-        <h3>Ready to Buy the Game of Shadows</h3>
+        <h3>Ready to Play the Game of Shadows</h3>
         <button
           className="homepage-login-button"
           onClick={() => navigate("/login")}
