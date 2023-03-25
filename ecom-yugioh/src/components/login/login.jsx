@@ -25,7 +25,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (userStatus === "succeeded") {
-      navigate("/");
+      navigate("/store");
     }
   }, [userStatus, navigate]);
 

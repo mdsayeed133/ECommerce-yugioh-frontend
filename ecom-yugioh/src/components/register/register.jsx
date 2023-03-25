@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
   useEffect(() => {
     if (userStatus === "succeeded") {
-      navigate("/");
+      navigate("/store");
     }
   }, [userStatus, navigate]);
 

@@ -13,6 +13,7 @@
     "enzyme-to-json": "^3.6.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-modal": "^3.16.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
@@ -21,8 +22,8 @@
   },
   "jest": {
     "snapshotSerializers": [
-    "enzyme-to-json/serializer"
-  ],
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
