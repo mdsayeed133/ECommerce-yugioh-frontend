@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./StorePage.css";
 
-const StorePage = ({ cards }) => {
-    let displayNum= 12;
+const StorePage = ({ cardAll }) => {
+  let displayNum = 12;
+  const [cards, setCards] = useState(cardAll);
   const [selectedCard, setSelectedCard] = useState(null);
   const [pageStart, setPageStart] = useState(0);
   const [pageEnd, setPageEnd] = useState(displayNum);
@@ -23,6 +24,39 @@ const StorePage = ({ cards }) => {
       setPageStart(pageStart - displayNum);
       setPageEnd(pageEnd - displayNum);
     }
+  };
+
+  const handleAllCards = () => {
+    setPageStart(0);
+    setPageEnd(displayNum);
+    setCards(cardAll);
+  };
+
+  const handleMonsters = () => {
+    setPageStart(0);
+    setPageEnd(displayNum);
+    const filteredCards = cardAll.filter(
+      (card) => card.type.typeId === parseInt(1)
+    );
+    setCards(filteredCards);
+  };
+
+  const handleSpells = () => {
+    setPageStart(0);
+    setPageEnd(displayNum);
+    const filteredCards = cardAll.filter(
+      (card) => card.type.typeId === parseInt(2)
+    );
+    setCards(filteredCards);
+  };
+
+  const handleTraps = () => {
+    setPageStart(0);
+    setPageEnd(displayNum);
+    const filteredCards = cardAll.filter(
+      (card) => card.type.typeId === parseInt(3)
+    );
+    setCards(filteredCards);
   };
 
   return (
@@ -52,11 +86,14 @@ const StorePage = ({ cards }) => {
             onClick={() => handleCardClick(card)}
           />
         ))}
-    
       </div>
       <div className="card-page-buttons">
         <button onClick={handleLastPage}>Last Page</button>
         <button onClick={handleNextPage}>Next Page</button>
+        <button onClick={handleAllCards}>All Cards</button>
+        <button onClick={handleMonsters}>Monsters</button>
+        <button onClick={handleSpells}>Spells</button>
+        <button onClick={handleTraps}>Traps</button>
       </div>
     </div>
   );

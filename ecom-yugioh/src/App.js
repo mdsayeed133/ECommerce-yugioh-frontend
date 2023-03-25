@@ -14,7 +14,6 @@ function App() {
 
   useEffect(()=>{dispatch(getAllCards())},[dispatch])
   
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,7 +21,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<LoginPage/>} />
           <Route path='/register' element={<RegisterPage />}/>
-          <Route path='/store' element={<StorePage cards={cards}/>}/>
+          <Route path='/store' element={<StorePage cardAll={cards}/>}/>
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </div>

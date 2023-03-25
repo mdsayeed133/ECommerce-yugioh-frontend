@@ -27,3 +27,33 @@
   cursor: pointer;
 }
 
+.card-page-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.card-page-buttons button {
+  background-color: #9711bc;
+  width: 120px;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+}
+
+.card-page-buttons button:hover {
+  background-color: #f7f13b;
+  color: black;
+}
+
+
